@@ -61,8 +61,8 @@ export const Certifications = () => {
                       </div>
                     )}
                   </div>
-                  <CardTitle className="text-white text-lg leading-tight">{cert.title}</CardTitle>
-                  <CardDescription className="text-purple-400 font-medium">{cert.issuer}</CardDescription>
+                  <CardTitle className="text-white text-xl font-bold leading-tight mb-2">{cert.title}</CardTitle>
+                  <CardDescription className="text-purple-400 font-semibold text-base">{cert.issuer}</CardDescription>
                 </CardHeader>
                 <CardContent className="pt-0">
                   <p className="text-gray-300 text-sm leading-relaxed mb-6">
