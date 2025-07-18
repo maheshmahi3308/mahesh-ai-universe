@@ -33,7 +33,7 @@ export const Certifications = () => {
   ];
 
   return (
-    <section id="certifications" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/30">
+    <section id="certifications" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
@@ -48,9 +48,9 @@ export const Certifications = () => {
           {certifications.map((cert, index) => (
             <Card 
               key={index}
-              className={`bg-gradient-to-br ${cert.gradient} backdrop-blur-sm border-0 relative overflow-hidden group hover:transform hover:scale-105 transition-all duration-300`}
+              className={`bg-gradient-to-br ${cert.gradient} backdrop-blur-sm border border-purple-500/30 relative overflow-hidden group hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/25`}
             >
-              <div className="absolute inset-[1px] bg-slate-800/90 rounded-lg">
+              <div className="absolute inset-[1px] bg-slate-900/90 rounded-lg">
                 <CardHeader className="pb-4">
                   <div className="flex items-start justify-between mb-3">
                     <Award className="text-purple-400 group-hover:text-pink-400 transition-colors duration-300" size={28} />
@@ -75,7 +75,7 @@ export const Certifications = () => {
                       {cert.skills.map((skill, idx) => (
                         <Badge 
                           key={idx} 
-                          className="bg-purple-500/20 text-purple-300 border-purple-500/30 text-xs"
+                          className="bg-purple-500/20 text-purple-300 border-purple-500/30 text-xs hover:bg-purple-500/30 transition-colors"
                         >
                           {skill}
                         </Badge>
@@ -85,7 +85,7 @@ export const Certifications = () => {
 
                   <Button 
                     size="sm" 
-                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0"
+                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 shadow-md hover:shadow-purple-500/25 transition-all duration-300"
                   >
                     <ExternalLink className="w-4 h-4 mr-2" />
                     View Certificate
@@ -97,7 +97,7 @@ export const Certifications = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-2xl p-8 border border-purple-500/20 max-w-2xl mx-auto">
+          <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-2xl p-8 border border-purple-500/20 max-w-2xl mx-auto backdrop-blur-sm">
             <h3 className="text-2xl font-bold text-white mb-4">Continuous Learning</h3>
             <p className="text-gray-300 leading-relaxed">
               Committed to staying updated with the latest developments in AI, ML, and data science through 
