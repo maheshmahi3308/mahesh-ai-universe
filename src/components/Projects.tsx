@@ -36,7 +36,7 @@ export const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/50 min-h-screen">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
@@ -53,69 +53,66 @@ export const Projects = () => {
             return (
               <Card 
                 key={index}
-                className={`bg-gradient-to-br ${project.gradient} backdrop-blur-sm border-0 relative overflow-hidden group hover:transform hover:scale-105 transition-all duration-300`}
+                className="bg-slate-800/90 border border-slate-700/50 hover:border-purple-500/50 backdrop-blur-sm relative overflow-hidden group hover:transform hover:scale-105 transition-all duration-300 shadow-xl"
               >
-                <div className={`absolute inset-0 bg-gradient-to-r ${project.borderGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm -z-10`}></div>
-                <div className="absolute inset-[1px] bg-slate-800/90 rounded-lg">
-                  <CardHeader className="pb-4">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="text-purple-400 group-hover:text-pink-400 transition-colors duration-300">
-                        <Icon size={28} />
-                      </div>
-                      <CardTitle className="text-white text-xl">{project.title}</CardTitle>
+                <CardHeader className="pb-4">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="text-purple-400 group-hover:text-pink-400 transition-colors duration-300">
+                      <Icon size={28} />
                     </div>
-                    <CardDescription className="text-gray-300 text-base leading-relaxed">
-                      {project.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-purple-400 mb-3">Key Features</h4>
-                      <div className="grid grid-cols-2 gap-2">
-                        {project.features.map((feature, idx) => (
-                          <Badge 
-                            key={idx} 
-                            variant="secondary" 
-                            className="bg-slate-700/50 text-gray-300 text-xs py-1"
-                          >
-                            {feature}
-                          </Badge>
-                        ))}
-                      </div>
+                    <CardTitle className="text-white text-xl font-semibold">{project.title}</CardTitle>
+                  </div>
+                  <CardDescription className="text-gray-300 text-base leading-relaxed">
+                    {project.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-purple-400 mb-3">Key Features</h4>
+                    <div className="grid grid-cols-2 gap-2">
+                      {project.features.map((feature, idx) => (
+                        <Badge 
+                          key={idx} 
+                          variant="secondary" 
+                          className="bg-slate-700/50 text-gray-300 text-xs py-1 border border-slate-600/50"
+                        >
+                          {feature}
+                        </Badge>
+                      ))}
                     </div>
-                    
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold text-purple-400 mb-3">Technologies</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech, idx) => (
-                          <Badge 
-                            key={idx} 
-                            className="bg-purple-500/20 text-purple-300 border-purple-500/30"
-                          >
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
+                  </div>
+                  
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-purple-400 mb-3">Technologies</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, idx) => (
+                        <Badge 
+                          key={idx} 
+                          className="bg-purple-500/20 text-purple-300 border border-purple-500/30"
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
                     </div>
+                  </div>
 
-                    <div className="flex gap-3">
-                      <Button 
-                        size="sm" 
-                        className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 flex-1"
-                      >
-                        <Github className="w-4 h-4 mr-2" />
-                        View Code
-                      </Button>
-                      <Button 
-                        size="sm" 
-                        variant="outline" 
-                        className="border-purple-500/50 text-purple-400 hover:bg-purple-500/10"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                      </Button>
-                    </div>
-                  </CardContent>
-                </div>
+                  <div className="flex gap-3">
+                    <Button 
+                      size="sm" 
+                      className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 flex-1"
+                    >
+                      <Github className="w-4 h-4 mr-2" />
+                      View Code
+                    </Button>
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="border-purple-500/50 text-purple-400 hover:bg-purple-500/10"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                    </Button>
+                  </div>
+                </CardContent>
               </Card>
             );
           })}
